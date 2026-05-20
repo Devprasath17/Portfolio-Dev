@@ -29,10 +29,43 @@
 
 body {
   min-height: 100dvh;
+  background-color: #070606;
+  background-image:
+    radial-gradient(circle at 16% 12%, rgba(255, 85, 69, 0.16), transparent 18%),
+    radial-gradient(circle at 88% 10%, rgba(94, 191, 255, 0.12), transparent 20%),
+    linear-gradient(180deg, #080606 0%, #0f0c0a 100%);
+  background-attachment: fixed;
+  color: #f4f4f4;
+}
+
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 22% 20%, rgba(255, 85, 69, 0.14), transparent 22%),
+    radial-gradient(circle at 78% 12%, rgba(84, 204, 255, 0.1), transparent 16%);
+  opacity: 0.88;
+  z-index: -1;
+}
+
+input:focus,
+textarea:focus {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(255, 85, 69, 0.12);
 }
 
 .text-glow {
   text-shadow: 0 0 10px rgba(255, 180, 170, 0.3);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }
 
 ::-webkit-scrollbar {

@@ -1,12 +1,22 @@
+import { motion } from 'framer-motion';
+import { fadeInUp } from '../utils/animations';
+import { SectionReveal } from './MotionWrappers';
+
 export default function Skills() {
   return (
-    <section className="space-y-12" id="skills">
+    <SectionReveal className="space-y-12" id="skills">
       <div className="flex items-center gap-4">
         <span className="h-[1px] w-12 bg-primary-container" />
         <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase tracking-widest text-primary">Skills</h2>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
-        <div className="glass-panel p-8 rounded-xl space-y-6 crimson-glow">
+        <motion.div
+          variants={fadeInUp}
+          whileHover={{ y: -6, scale: 1.01, boxShadow: '0 24px 50px rgba(255, 85, 69, 0.12)' }}
+          whileTap={{ scale: 0.99 }}
+          transition={{ type: 'spring', stiffness: 220, damping: 22 }}
+          className="glass-panel p-8 rounded-xl space-y-6 crimson-glow"
+        >
           <div className="flex items-center gap-3">
             <span className="material-symbols-outlined text-primary-container">code</span>
             <h3 className="font-headline-md text-headline-md">Languages</h3>
@@ -18,9 +28,15 @@ export default function Skills() {
               </span>
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        <div className="glass-panel p-8 rounded-xl space-y-6 lg:row-span-2 crimson-glow">
+        <motion.div
+          variants={fadeInUp}
+          whileHover={{ y: -6, scale: 1.01, boxShadow: '0 24px 50px rgba(255, 85, 69, 0.12)' }}
+          whileTap={{ scale: 0.99 }}
+          transition={{ type: 'spring', stiffness: 220, damping: 22 }}
+          className="glass-panel p-8 rounded-xl space-y-6 lg:row-span-2 crimson-glow"
+        >
           <div className="flex items-center gap-3">
             <span className="material-symbols-outlined text-primary-container">layers</span>
             <h3 className="font-headline-md text-headline-md">Frameworks</h3>
@@ -49,13 +65,21 @@ export default function Skills() {
             <div className="space-y-2">
               <p className="font-label-md text-code-sm text-primary-container uppercase tracking-tighter">Mobile</p>
               <div className="flex flex-wrap gap-2">
-                <span className="font-label-md text-label-md px-3 py-1.5 bg-primary-container/5 border border-outline-variant/20 rounded text-on-surface-variant">React Native</span>
+                <span className="font-label-md text-label-md px-3 py-1.5 bg-primary-container/5 border border-outline-variant/20 rounded text-on-surface-variant">
+                  React Native
+                </span>
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        <div className="glass-panel p-8 rounded-xl space-y-6 crimson-glow">
+        <motion.div
+          variants={fadeInUp}
+          whileHover={{ y: -6, scale: 1.01, boxShadow: '0 24px 50px rgba(255, 85, 69, 0.12)' }}
+          whileTap={{ scale: 0.99 }}
+          transition={{ type: 'spring', stiffness: 220, damping: 22 }}
+          className="glass-panel p-8 rounded-xl space-y-6 crimson-glow"
+        >
           <div className="flex items-center gap-3">
             <span className="material-symbols-outlined text-primary-container">database</span>
             <h3 className="font-headline-md text-headline-md">Databases</h3>
@@ -67,9 +91,15 @@ export default function Skills() {
               </span>
             ))}
           </div>
-        </div>
+        </motion.div>
 
-        <div className="glass-panel p-8 rounded-xl space-y-6 crimson-glow">
+        <motion.div
+          variants={fadeInUp}
+          whileHover={{ y: -6, scale: 1.01, boxShadow: '0 24px 50px rgba(255, 85, 69, 0.12)' }}
+          whileTap={{ scale: 0.99 }}
+          transition={{ type: 'spring', stiffness: 220, damping: 22 }}
+          className="glass-panel p-8 rounded-xl space-y-6 crimson-glow"
+        >
           <div className="flex items-center gap-3">
             <span className="material-symbols-outlined text-primary-container">construction</span>
             <h3 className="font-headline-md text-headline-md">Tools</h3>
@@ -81,8 +111,8 @@ export default function Skills() {
               </span>
             ))}
           </div>
-        </div>
+        </motion.div>
       </div>
-    </section>
+    </SectionReveal>
   );
 }

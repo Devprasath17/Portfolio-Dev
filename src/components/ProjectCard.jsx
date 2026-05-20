@@ -1,14 +1,26 @@
+import { motion } from 'framer-motion';
+import { fadeInUp } from '../utils/animations';
+
 export default function ProjectCard({ project }) {
   return (
-    <div className="glass-panel rounded-xl overflow-hidden crimson-glow group flex flex-col">
+    <motion.article
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={fadeInUp}
+      whileHover={{ y: -8, scale: 1.02, boxShadow: '0 28px 80px rgba(255, 85, 69, 0.13)' }}
+      whileTap={{ scale: 0.98 }}
+      transition={{ type: 'spring', stiffness: 220, damping: 24 }}
+      className="glass-panel rounded-xl overflow-hidden crimson-glow group flex flex-col"
+    >
       {project.image ? (
-        <div className="aspect-video w-full overflow-hidden bg-surface-container-highest">
+        <motion.div whileHover={{ scale: 1.08 }} transition={{ duration: 0.5, ease: 'easeOut' }} className="aspect-video w-full overflow-hidden bg-surface-container-highest">
           <img
             alt={project.title}
             src={project.image}
-            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-60"
+            className="w-full h-full object-cover transition-transform duration-700 opacity-80"
           />
-        </div>
+        </motion.div>
       ) : (
         <div className="aspect-square w-full bg-surface-container-high p-8 flex items-center justify-center relative">
           <span className="material-symbols-outlined text-[100px] text-primary-container/20 group-hover:text-primary-container transition-all">
@@ -28,14 +40,22 @@ export default function ProjectCard({ project }) {
           </ul>
         </div>
         <div className="flex gap-4 mt-auto">
-          <a className="flex items-center gap-2 text-primary font-label-md hover:underline" href={project.liveUrl}>
+          <motion.a
+            whileHover={{ x: 4, scale: 1.01 }}
+            className="flex items-center gap-2 text-primary font-label-md hover:underline"
+            href={project.liveUrl}
+          >
             <span className="material-symbols-outlined text-[18px]">link</span> Live Demo
-          </a>
-          <a className="flex items-center gap-2 text-on-surface-variant font-label-md hover:text-primary" href={project.sourceUrl}>
+          </motion.a>
+          <motion.a
+            whileHover={{ x: 4, scale: 1.01 }}
+            className="flex items-center gap-2 text-on-surface-variant font-label-md hover:text-primary"
+            href={project.sourceUrl}
+          >
             <span className="material-symbols-outlined text-[18px]">code</span> GitHub
-          </a>
+          </motion.a>
         </div>
       </div>
-    </div>
+    </motion.article>
   );
 }

@@ -1,3 +1,5 @@
+import { motion } from 'framer-motion';
+
 const navLinks = [
   { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
@@ -9,7 +11,11 @@ const navLinks = [
 
 export default function Navbar({ activeSection }) {
   return (
-    <header className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/10">
+    <motion.header
+      initial={{ y: -28, opacity: 0 }}
+      animate={{ y: 0, opacity: 1, transition: { duration: 0.72, ease: 'easeOut' } }}
+      className="fixed top-0 w-full z-50 bg-background/80 backdrop-blur-xl border-b border-outline-variant/10"
+    >
       <div className="flex justify-between items-center h-16 px-margin-mobile md:px-gutter max-w-container-max mx-auto">
         <div className="flex items-center gap-2">
           <span className="material-symbols-outlined text-primary" aria-hidden="true">terminal</span>
@@ -22,10 +28,15 @@ export default function Navbar({ activeSection }) {
             return (
               <a
                 key={link.href}
-                className={`font-label-md text-label-md transition-colors duration-300 ${isActive ? 'text-primary' : 'text-on-surface-variant hover:text-primary'}`}
                 href={link.href}
+                className={`group relative font-label-md text-label-md transition-colors duration-300 ${isActive ? 'text-primary' : 'text-on-surface-variant hover:text-primary'}`}
               >
                 {link.label}
+                <span
+                  className={`absolute left-0 -bottom-1 h-[2px] w-full rounded-full bg-primary transition-all duration-300 ${
+                    isActive ? 'scale-x-100 opacity-100' : 'scale-x-0 opacity-0 group-hover:scale-x-100 group-hover:opacity-100'
+                  }`}
+                />
               </a>
             );
           })}
@@ -43,6 +54,6 @@ export default function Navbar({ activeSection }) {
           menu
         </button>
       </div>
-    </header>
+    </motion.header>
   );
 }

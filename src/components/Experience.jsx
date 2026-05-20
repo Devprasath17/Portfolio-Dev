@@ -1,6 +1,8 @@
+import { SectionReveal } from './MotionWrappers';
+
 export default function Experience() {
   return (
-    <section className="space-y-12" id="experience">
+    <SectionReveal className="space-y-12" id="experience">
       <div className="flex items-center gap-4">
         <span className="h-[1px] w-12 bg-primary-container" />
         <h2 className="font-headline-lg text-headline-lg-mobile md:text-headline-lg uppercase tracking-widest text-primary">Experience</h2>
@@ -32,6 +34,6 @@ export default function Experience() {
           </div>
         </div>
       </div>
-    </section>
+    </SectionReveal>
   );
 }
