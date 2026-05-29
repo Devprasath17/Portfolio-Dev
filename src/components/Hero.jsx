@@ -21,7 +21,7 @@ export default function Hero() {
         >
           <img
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOhggg_LNVuP9JMKdnXfOjui7Pq57vTpXUHhgCqZS4obSFCfEtF92dqCOiKtQn8_zkFyjAJV6Nntg7QR37dXXHyd7JkFhdq_kyt__VHxEWP-CoKM9gkBGvA4iDh5v2BoHGiqoQXgCOGawbEE8jsbJVeT6EUz3oefXvZsUIe4mqpcC95hsIuvZaXqba1tdPq21hV4AzLl4JxILH1Nw18BZNAxy7i2H4AKxy-lCweIDNBXbQemlgEUGSTO_F1AHBHKj7HI7MlC6PUbNZ"
+            src="/avatar.png"
             alt="Devprasath K K"
           />
         </motion.div>

@@ -13,29 +13,30 @@
 }
 
 .glass-panel {
-  background: rgba(11, 11, 11, 0.6);
-  backdrop-filter: blur(20px);
-  border: 1px solid rgba(142, 142, 147, 0.1);
+  background: rgba(18, 26, 36, 0.72);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(108, 151, 186, 0.16);
+  box-shadow: 0 20px 60px rgba(5, 12, 20, 0.24);
 }
 
 .crimson-glow {
-  transition: all 0.5s ease;
+  transition: all 0.35s ease;
 }
 
 .crimson-glow:hover {
-  box-shadow: 0 0 25px 5px rgba(255, 85, 69, 0.15);
-  border-color: #ff5545;
+  box-shadow: 0 0 30px 6px rgba(102, 217, 255, 0.18);
+  border-color: rgba(102, 217, 255, 0.32);
 }
 
 body {
   min-height: 100dvh;
-  background-color: #070606;
+  background-color: #101721;
   background-image:
-    radial-gradient(circle at 16% 12%, rgba(255, 85, 69, 0.16), transparent 18%),
-    radial-gradient(circle at 88% 10%, rgba(94, 191, 255, 0.12), transparent 20%),
-    linear-gradient(180deg, #080606 0%, #0f0c0a 100%);
+    radial-gradient(circle at 18% 12%, rgba(102, 217, 255, 0.14), transparent 18%),
+    radial-gradient(circle at 84% 18%, rgba(187, 116, 255, 0.08), transparent 20%),
+    linear-gradient(180deg, #111a24 0%, #0f1620 100%);
   background-attachment: fixed;
-  color: #f4f4f4;
+  color: #e7edf5;
 }
 
 body::before {
@@ -43,8 +44,8 @@ body::before {
   position: fixed;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(circle at 22% 20%, rgba(255, 85, 69, 0.14), transparent 22%),
-    radial-gradient(circle at 78% 12%, rgba(84, 204, 255, 0.1), transparent 16%);
+  background: radial-gradient(circle at 22% 18%, rgba(102, 217, 255, 0.16), transparent 20%),
+    radial-gradient(circle at 78% 16%, rgba(175, 111, 255, 0.09), transparent 18%);
   opacity: 0.88;
   z-index: -1;
 }
@@ -52,11 +53,11 @@ body::before {
 input:focus,
 textarea:focus {
   outline: none;
-  box-shadow: 0 0 0 4px rgba(255, 85, 69, 0.12);
+  box-shadow: 0 0 0 4px rgba(102, 217, 255, 0.14);
 }
 
 .text-glow {
-  text-shadow: 0 0 10px rgba(255, 180, 170, 0.3);
+  text-shadow: 0 0 14px rgba(102, 217, 255, 0.28);
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -73,20 +74,20 @@ textarea:focus {
 }
 
 ::-webkit-scrollbar-track {
-  background: #1f0f0d;
+  background: #111a24;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #44302d;
+  background: #2d4b68;
   border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ff5545;
+  background: #66d9ff;
 }
 
 .timeline-line {
-  background: linear-gradient(to bottom, transparent, #ff5545 15%, #ff5545 85%, transparent);
+  background: linear-gradient(to bottom, transparent, #66d9ff 15%, #66d9ff 85%, transparent);
 }
 
 input,
@@ -100,6 +101,6 @@ button {
 }
 
 ::selection {
-  background: rgba(255, 85, 69, 0.8);
+  background: rgba(102, 217, 255, 0.8);
   color: #fff;
 }
